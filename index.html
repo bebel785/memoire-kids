@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#e91e63">
+  <meta name="description" content="Jeu de mémoire coloré et amusant pour les enfants de 3 à 8 ans">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Mémoire Kids">
+  
+  <title>Mémoire Kids - Jeu de Mémoire</title>
+  
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="manifest.json">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>🧠 Mémoire Kids</h1>
+      <p class="subtitle">Trouve les paires ! Amuse-toi bien 🌈</p>
+    </header>
+
+    <div class="controls">
+      <div class="stat-box">
+        <span class="stat-icon">⭐</span>
+        <div>
+          <div class="stat-label">Score</div>
+          <div class="stat-value" id="score">0</div>
+        </div>
+      </div>
+      
+      <div class="stat-box">
+        <span class="stat-icon">👆</span>
+        <div>
+          <div class="stat-label">Coups</div>
+          <div class="stat-value" id="moves">0</div>
+        </div>
+      </div>
+      
+      <select id="difficulty" aria-label="Niveau de difficulté">
+        <option value="easy">Facile (8 cartes)</option>
+        <option value="medium" selected>Moyen (12 cartes)</option>
+        <option value="hard">Difficile (16 cartes)</option>
+      </select>
+      
+      <button id="restartBtn" class="btn-primary">
+        🔄 Nouvelle partie
+      </button>
+    </div>
+
+    <div class="board medium" id="board" role="grid" aria-label="Plateau de jeu"></div>
+
+    <div class="message" id="message" role="status" aria-live="polite"></div>
+
+    <footer>
+      <p>Fait avec ❤️ pour les enfants de 3 à 8 ans</p>
+      <button class="install-btn" id="installBtn" hidden>📱 Installer l'application</button>
+    </footer>
+  </div>
+
+  <div class="ios-sheet" id="iosSheet" hidden>
+    <div class="ios-box" role="dialog" aria-modal="true" aria-labelledby="iosTitle">
+      <h2 id="iosTitle">📱 Installer sur iPhone / iPad</h2>
+      <ol>
+        <li>Ouvre cette page dans <strong>Safari</strong></li>
+        <li>Touche le bouton <strong>Partager</strong> <span class="ios-icon">⬆️</span> en bas de l'écran</li>
+        <li>Choisis <strong>« Sur l'écran d'accueil »</strong></li>
+        <li>Touche <strong>Ajouter</strong> 🎉</li>
+      </ol>
+      <button class="btn-primary" id="iosClose">J'ai compris</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
